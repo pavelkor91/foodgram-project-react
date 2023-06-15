@@ -9,18 +9,18 @@ services:
       - ./.env
 
   backend:
-    image: pavelkor91/foodgram_project
+    image: pavelkor91/foodgram_project:latest
     restart: always
     volumes:
-      - static_value:/code/static/
-      - media_value:/code/media/uploads/
+      - static_value:/app/static/
+      - media_value:/app/media/
     depends_on:
       - db
     env_file:
       - ./.env
 
   frontend:
-      image: pavelkor91/foodgram_frontend
+      image: pavelkor91/foodgram_frontend:latest
       volumes:
         - ../frontend/:/app/result_build/
       depends_on:
@@ -32,7 +32,7 @@ services:
       - "80:80"
     volumes:
       - static_value:/var/html/static/
-      - media_value:/var/html/media/uploads/
+      - media_value:/var/html/media/
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ../frontend/build:/usr/share/nginx/html/
       - ../docs/:/usr/share/nginx/html/api/docs/
