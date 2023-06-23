@@ -59,13 +59,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'foodgram.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
@@ -76,7 +70,7 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', default=5432)
     }
 }
-'''
+
 AUTH_PWD_MODULE = "django.contrib.auth.password_validation."
 
 AUTH_PASSWORD_VALIDATORS = [
