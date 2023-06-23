@@ -17,7 +17,7 @@ class Tag(models.Model):
         format='hex',
         default='#FFFFFF',
         help_text='Введите цвет в Hex формате',
-        validators=[hex_validator,]
+        validators=[hex_validator, ]
     )
     slug = models.SlugField(
         verbose_name='Slug',
