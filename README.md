@@ -87,7 +87,7 @@ TELEGRAM_TOKEN - Токен телеграм бота
 
 Все примеры доступны в документации:
 ```
-http://{host}/redoc/
+http://{host}/api/docs/
 ```
 ## Стек технологий
 - Django REST Framework
