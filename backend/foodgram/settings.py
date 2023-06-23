@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-_$$57nim8$4*ocuju8b3$ccn64tr!w)t8$4j%k6l2k%i@2kn-i'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -141,7 +141,6 @@ DJOSER = {
         'user_list': ['rest_framework.permissions.AllowAny'],
         'username_reset': ['rest_framework.permissions.IsAdminUser'],
         'username_reset_confirm': ['rest_framework.permissions.IsAdminUser'],
-        'set_username': ['rest_framework.permissions.IsAdminUser'],
         'user_delete': ['rest_framework.permissions.IsAdminUser'],
     },
     'HIDE_USERS': False,
