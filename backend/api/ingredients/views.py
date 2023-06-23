@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
@@ -13,5 +14,5 @@ class IngredientViewSet(viewsets.ReadOnlyModelViewSet):
     pagination_class = None
     serializer_class = IngredientSerializer
     queryset = Ingredient.objects.all()
-    filter_backends = [IngredientFilter, ]
-    search_fields = ['name', ]
+    filter_backends = [DjangoFilterBackend, ]
+    filterset_class = IngredientFilter
