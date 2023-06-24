@@ -1,18 +1,22 @@
+from django import forms
 from django.contrib import admin
 
 from .models import Recipe
+from .forms import RequiredInlineFormSet
 
 
 class IngredientsInline(admin.TabularInline):
     model = Recipe.ingredients.through
+    formset = RequiredInlineFormSet
     verbose_name = 'Ингредиент'
     verbose_name_plural = "Ингредиенты"
 
 
 class TagsInline(admin.TabularInline):
     model = Recipe.tags.through
+    formset = RequiredInlineFormSet
     verbose_name = 'Тэг'
-    verbose_name_plural = "Тэги"
+    verbose_name_plural = 'Тэги'
 
 
 @admin.register(Recipe)
@@ -28,7 +32,6 @@ class RecipeAdmin(admin.ModelAdmin):
         TagsInline
     )
 
+    @admin.display(description='Добавлено в избранное')
     def favorites(self, obj):
         return obj.favorites.count()
-
-    favorites.short_description = 'Добавлено в избранное'
