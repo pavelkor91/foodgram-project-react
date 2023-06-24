@@ -1,4 +1,4 @@
-from django.forms.models import BaseInlineFormSet    
+from django.forms.models import BaseInlineFormSet
 
 
 class RequiredInlineFormSet(BaseInlineFormSet):
